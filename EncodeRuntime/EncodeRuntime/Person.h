@@ -24,6 +24,10 @@
 
 @property (nonatomic,strong) NSString *sex;
 
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key;
+
+- (nullable id)valueForUndefinedKey:(NSString *)key;
+
 - (void)getIvarList;
 
 - (void)getPropertyName;

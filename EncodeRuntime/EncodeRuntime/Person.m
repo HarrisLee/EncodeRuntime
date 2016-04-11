@@ -64,11 +64,15 @@
     id peopleClass = [self class];
     do {
         unsigned int outCount;
+        //获取指向当前类的所有属性
         objc_property_t *properties = class_copyPropertyList(peopleClass, &outCount);
         for (int idx = 0; idx < outCount; idx++) {
             objc_property_t property = properties[idx];
+            //获取当前属性的NSString名称
             NSString *propName = [NSString stringWithUTF8String:property_getName(property)];
+            //获取该属性的值
             id value = [self valueForKey:propName];
+            //将该属性的值复制到Model
             [model setValue:value forKey:propName];
             fprintf(stdout, "%s %s\n", property_getName(property), property_getAttributes(property));
         }
@@ -77,6 +81,17 @@
         
     } while (![[peopleClass description] isEqualToString:@"NSObject"]);
     return model;
+}
+
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key
+{
+    NSLog(@"未定义的属性%@：%@\n",key,value);
+}
+
+- (nullable id)valueForUndefinedKey:(NSString *)key
+{
+    NSLog(@"未定义的属性%@\n",key);
+    return nil;
 }
 
 - (void)getIvarList
