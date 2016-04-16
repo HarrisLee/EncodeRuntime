@@ -76,9 +76,7 @@
             [model setValue:value forKey:propName];
             fprintf(stdout, "%s %s\n", property_getName(property), property_getAttributes(property));
         }
-        
         peopleClass = [peopleClass superclass];
-        
     } while (![[peopleClass description] isEqualToString:@"NSObject"]);
     return model;
 }
