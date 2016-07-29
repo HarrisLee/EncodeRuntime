@@ -19,45 +19,64 @@
 
 @implementation Person
 
+//自动解档
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
-    unsigned int count;
-    objc_property_t *properties = class_copyPropertyList([self class], &count);
-    for (int idx = 0; idx < count; idx++) {
-        objc_property_t property = properties[idx];
-        //获取C字符串属性名称
-        const char *name = property_getName(property);
-        //C字符串属性名称转OC NSString名称
-        NSString *propertyName = [[NSString alloc] initWithUTF8String:name];
-        //对该属性进行解码
-        NSString *propertyValue = [aDecoder decodeObjectForKey:propertyName];
-        [self setValue:propertyValue forKey:propertyName];
-    }
-    
-    free(properties);
+    return [self initWithCoder:aDecoder class:[self class] superClass:YES];
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder class:(Class)cls superClass:(BOOL)isSuper
+{
+    Class copyClass = cls;
+    do {
+        unsigned int count;
+        objc_property_t *properties = class_copyPropertyList([copyClass class], &count);
+        for (int idx = 0; idx < count; idx++) {
+            objc_property_t property = properties[idx];
+            //获取C字符串属性名称
+            const char *name = property_getName(property);
+            //C字符串属性名称转OC NSString名称
+            NSString *propertyName = [[NSString alloc] initWithUTF8String:name];
+            //对该属性进行解码
+            NSString *propertyValue = [aDecoder decodeObjectForKey:propertyName];
+            [self setValue:propertyValue forKey:propertyName];
+        }
+        free(properties);
+        copyClass = [copyClass superclass];
+    } while (isSuper && copyClass && copyClass != [NSObject class]);
     return self;
 }
 
+//自动归档
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    unsigned int count;
-    //获取指向当前类的所有属性
-    objc_property_t *properties = class_copyPropertyList([self class], &count);
-    for (int idx = 0; idx < count; idx++) {
-        objc_property_t property = properties[idx];
-        //获取C字符串属性名称
-        const char *name = property_getName(property);
-        //C字符串属性名称转OC NSString名称
-        NSString *propertyName = [[NSString alloc] initWithUTF8String:name];
-        //获取属性值名称
-        NSString *propertyValue = [self valueForKey:propertyName];
-        //对该属性进行编码
-        [aCoder encodeObject:propertyValue forKey:propertyName];
-    }
-    
-    free(properties);
+    [self encode:aCoder class:[self class]];
 }
 
+- (void)encode:(NSCoder *)aCoder class:(Class)cls
+{
+    Class copyClass = cls;
+    do {
+        unsigned int count;
+        //获取指向当前类的所有属性
+        objc_property_t *properties = class_copyPropertyList([self class], &count);
+        for (int idx = 0; idx < count; idx++) {
+            objc_property_t property = properties[idx];
+            //获取C字符串属性名称
+            const char *name = property_getName(property);
+            //C字符串属性名称转OC NSString名称
+            NSString *propertyName = [[NSString alloc] initWithUTF8String:name];
+            //获取属性值名称
+            NSString *propertyValue = [self valueForKey:propertyName];
+            //对该属性进行编码
+            [aCoder encodeObject:propertyValue forKey:propertyName];
+        }
+        free(properties);
+        copyClass = [copyClass superclass];
+    } while (copyClass && copyClass != [NSObject class]);
+}
+
+//调用copy 方法时使用。
 - (instancetype)copyWithZone:(NSZone *)zone
 {
     id model = [[[self class] allocWithZone:zone] init];
