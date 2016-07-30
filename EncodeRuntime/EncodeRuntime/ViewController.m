@@ -12,6 +12,7 @@
 #import "StudentSubClass.h"
 #import "UserCell.h"
 #import "UIImageView+WebCache.h"
+#import "TimeViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -87,6 +88,12 @@
     table.dataSource = self;
     table.showsVerticalScrollIndicator = NO;
     [self.view addSubview:table];
+    
+    
+//    [NSRunLoop currentRunLoop] addTimer:<#(nonnull NSTimer *)#> forMode:NSRunLoopCommonModes
+//    
+//    FBSSerialQueue
+    
 }
 
 - (void)startActivity
@@ -113,6 +120,14 @@
     cell.subLabel.text = model.sub;
     [cell.iconView sd_setImageWithURL:[NSURL URLWithString:model.portrait]];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    TimeViewController *vc = [[TimeViewController alloc] init];
+    vc.title = @"时间Time测试";
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

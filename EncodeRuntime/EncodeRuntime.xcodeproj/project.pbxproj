@@ -30,12 +30,12 @@
 		447071281CBB33B90017F665 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 447071271CBB33B90017F665 /* main.m */; };
 		4470712B1CBB33B90017F665 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4470712A1CBB33B90017F665 /* AppDelegate.m */; };
 		4470712E1CBB33B90017F665 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4470712D1CBB33B90017F665 /* ViewController.m */; };
-		447071311CBB33B90017F665 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4470712F1CBB33B90017F665 /* Main.storyboard */; };
 		447071331CBB33B90017F665 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 447071321CBB33B90017F665 /* Assets.xcassets */; };
 		447071361CBB33B90017F665 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 447071341CBB33B90017F665 /* LaunchScreen.storyboard */; };
 		4470713F1CBB33D60017F665 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 4470713E1CBB33D60017F665 /* Person.m */; };
 		447071421CBB3C970017F665 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 447071411CBB3C970017F665 /* Student.m */; };
 		447071451CBB3D5F0017F665 /* StudentSubClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 447071441CBB3D5F0017F665 /* StudentSubClass.m */; };
+		44EB92F81D4C86DB001A0CCF /* TimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EB92F71D4C86DB001A0CCF /* TimeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,7 +81,6 @@
 		4470712A1CBB33B90017F665 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4470712C1CBB33B90017F665 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4470712D1CBB33B90017F665 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		447071301CBB33B90017F665 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		447071321CBB33B90017F665 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		447071351CBB33B90017F665 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		447071371CBB33B90017F665 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -91,6 +90,8 @@
 		447071411CBB3C970017F665 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		447071431CBB3D5F0017F665 /* StudentSubClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentSubClass.h; sourceTree = "<group>"; };
 		447071441CBB3D5F0017F665 /* StudentSubClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentSubClass.m; sourceTree = "<group>"; };
+		44EB92F61D4C86DB001A0CCF /* TimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeViewController.h; sourceTree = "<group>"; };
+		44EB92F71D4C86DB001A0CCF /* TimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,7 +170,6 @@
 				4470712A1CBB33B90017F665 /* AppDelegate.m */,
 				4470712C1CBB33B90017F665 /* ViewController.h */,
 				4470712D1CBB33B90017F665 /* ViewController.m */,
-				4470712F1CBB33B90017F665 /* Main.storyboard */,
 				447071321CBB33B90017F665 /* Assets.xcassets */,
 				447071341CBB33B90017F665 /* LaunchScreen.storyboard */,
 				447071371CBB33B90017F665 /* Info.plist */,
@@ -182,6 +182,8 @@
 				447071441CBB3D5F0017F665 /* StudentSubClass.m */,
 				440B84DA1D470E3C00CCCE19 /* UserCell.h */,
 				440B84DB1D470E3C00CCCE19 /* UserCell.m */,
+				44EB92F61D4C86DB001A0CCF /* TimeViewController.h */,
+				44EB92F71D4C86DB001A0CCF /* TimeViewController.m */,
 			);
 			path = EncodeRuntime;
 			sourceTree = "<group>";
@@ -257,7 +259,6 @@
 				440B84DE1D47120100CCCE19 /* 1twitter.png in Resources */,
 				440B84E41D47123500CCCE19 /* 3twitter.png in Resources */,
 				447071331CBB33B90017F665 /* Assets.xcassets in Resources */,
-				447071311CBB33B90017F665 /* Main.storyboard in Resources */,
 				440B84E51D47123500CCCE19 /* 4twitter.png in Resources */,
 				440B84E61D47123500CCCE19 /* 5twitter.png in Resources */,
 			);
@@ -289,6 +290,7 @@
 				440B85071D47157200CCCE19 /* SDWebImageCompat.m in Sources */,
 				440B84DC1D470E3C00CCCE19 /* UserCell.m in Sources */,
 				447071281CBB33B90017F665 /* main.m in Sources */,
+				44EB92F81D4C86DB001A0CCF /* TimeViewController.m in Sources */,
 				440B850F1D47157200CCCE19 /* UIImage+MultiFormat.m in Sources */,
 				440B850E1D47157200CCCE19 /* UIImage+GIF.m in Sources */,
 			);
@@ -297,14 +299,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4470712F1CBB33B90017F665 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				447071301CBB33B90017F665 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		447071341CBB33B90017F665 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
