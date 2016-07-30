@@ -132,8 +132,7 @@
             self.timer];
 }
 
-#pragma mark -
-
+#pragma mark customer method
 - (void)setTolerance:(NSTimeInterval)tolerance
 {
     @synchronized(self)
