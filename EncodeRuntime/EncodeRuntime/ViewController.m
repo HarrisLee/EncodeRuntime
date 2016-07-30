@@ -13,6 +13,7 @@
 #import "UserCell.h"
 #import "UIImageView+WebCache.h"
 #import "TimeViewController.h"
+#import "RMWeakTimerTarget.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -88,12 +89,6 @@
     table.dataSource = self;
     table.showsVerticalScrollIndicator = NO;
     [self.view addSubview:table];
-    
-    
-//    [NSRunLoop currentRunLoop] addTimer:<#(nonnull NSTimer *)#> forMode:NSRunLoopCommonModes
-//    
-//    FBSSerialQueue
-    
 }
 
 - (void)startActivity

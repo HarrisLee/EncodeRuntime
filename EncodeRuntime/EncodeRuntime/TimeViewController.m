@@ -8,12 +8,13 @@
 //
 
 #import "TimeViewController.h"
+#import "RMWeakTimerTarget.h"
 
 @interface TimeViewController ()
 {
-    NSTimer *time;
+    RMWeakTimerTarget *time;
+//    NSTimer *time;
 }
-//@property (nonatomic,strong) NSTimer *time;
 
 @end
 
@@ -23,8 +24,22 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    __weak typeof(self) weakSelf = self;
-    time = [NSTimer scheduledTimerWithTimeInterval:1.0 target:weakSelf selector:@selector(showName:) userInfo:@"info" repeats:YES];
+    //此方法可以实现Timer在ViewController被Pop的时候 执行dealloc方法。
+    time = [RMWeakTimerTarget
+            scheduledTimerWithTimeInterval:1.0
+            target:self selector:@selector(showName:)
+            userInfo:@"infos Object"
+            repeats:YES dispatchQueue:dispatch_get_main_queue()];
+    
+    
+//    //此time在Dealloc里面释放的话会无法实现。因为Timer添加到Runloop的时候，会被Runloop强引用，
+//    //timer对target又做了强引用，导致 target 一直不能被释放掉，所以也就走不到target的dealloc里
+//    time = [NSTimer scheduledTimerWithTimeInterval:1.0
+//                                            target:self
+//                                          selector:@selector(showName:)
+//                                          userInfo:@"info"
+//                                           repeats:YES];
+    
 }
 
 - (void)showName:(id)obj
@@ -34,9 +49,8 @@
 
 - (void)dealloc
 {
-    if ([time isValid]) {
-        [time invalidate];
-    }
+    [time invalidate];
+
 //    if ([self.time isValid]) {
 //        [self.time invalidate];
 //    }
