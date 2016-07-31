@@ -9,13 +9,15 @@
 
 #import "TimeViewController.h"
 #import "RMWeakTimerTarget.h"
+#import "Person.h"
+
 
 @interface TimeViewController ()
 {
-    RMWeakTimerTarget *time;
-//    NSTimer *time;
+//    RMWeakTimerTarget *time;
+    NSTimer *time;
 }
-
+@property (nonatomic,weak) Person *person;
 @end
 
 @implementation TimeViewController
@@ -25,20 +27,24 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     //此方法可以实现Timer在ViewController被Pop的时候 执行dealloc方法。
-    time = [RMWeakTimerTarget
-            scheduledTimerWithTimeInterval:1.0
-            target:self selector:@selector(showName:)
-            userInfo:@"infos Object"
-            repeats:YES dispatchQueue:dispatch_get_main_queue()];
+//    time = [RMWeakTimerTarget
+//            scheduledTimerWithTimeInterval:1.0
+//            target:self selector:@selector(showName:)
+//            userInfo:@"infos Object"
+//            repeats:YES dispatchQueue:dispatch_get_main_queue()];
+    
+    Person *person = [Person new];
+    self.person = person;
     
     
 //    //此time在Dealloc里面释放的话会无法实现。因为Timer添加到Runloop的时候，会被Runloop强引用，
-//    //timer对target又做了强引用，导致 target 一直不能被释放掉，所以也就走不到target的dealloc里
-//    time = [NSTimer scheduledTimerWithTimeInterval:1.0
-//                                            target:self
-//                                          selector:@selector(showName:)
-//                                          userInfo:@"info"
-//                                           repeats:YES];
+    //timer对target又做了强引用，导致 target 一直不能被释放掉，所以也就走不到target的dealloc里
+    //当Person 没有showDesciption:方法时，会奔溃（只要有这个方法，而不管有没有在头文件。h中定义）
+    time = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                            target:self.person
+                                          selector:@selector(showDesciption:)
+                                          userInfo:@"info"
+                                           repeats:YES];
     
 }
 

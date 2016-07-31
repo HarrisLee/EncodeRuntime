@@ -166,4 +166,14 @@
     }
 }
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%p person one",self];
+}
+
+- (void)showDesciption:(_Nullable id)obj
+{
+    NSLog(@"person:%@",self);
+}
+
 @end
