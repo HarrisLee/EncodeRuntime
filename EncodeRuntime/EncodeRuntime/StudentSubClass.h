@@ -12,4 +12,8 @@
 
 @property (nonatomic,strong) NSString *sub;
 
+@property (nonatomic,strong) NSString *userN;
+
+- (void)showName;
+
 @end

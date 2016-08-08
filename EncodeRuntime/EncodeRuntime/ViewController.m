@@ -57,8 +57,9 @@
     ss1.name = @"ss1";
     ss1.school = @"YZ";
     ss1.sub = @"sssSub";
+    [ss1 showName];
     StudentSubClass *ss2 = [ss1 copy];
-    NSLog(@"%@",ss2);
+    NSLog(@"%@",[ss2 userN]);
     
     [person getIvarList];
     [person getProtoclList];

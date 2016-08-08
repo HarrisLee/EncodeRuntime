@@ -10,25 +10,25 @@
 
 @interface Person : NSObject
 
-@property (nonatomic,strong) NSString *portrait;
+@property (nonatomic,strong) NSString *_Nullable portrait;
 
-@property (nonatomic,strong) NSString *name;
+@property (nonatomic,strong) NSString *_Nullable name;
 
-@property (nonatomic,strong) NSString *job;
+@property (nonatomic,strong) NSString *_Nullable job;
 
-@property (nonatomic,strong) NSString *native;
+@property (nonatomic,strong) NSString *_Nullable native;
 
-@property (nonatomic,strong) NSString *education;
+@property (nonatomic,strong) NSString *_Nullable education;
 
 @property (nonatomic,assign) NSInteger age;
 
 @property (nonatomic,assign) NSInteger height;
 
-@property (nonatomic,strong) NSString *sex;
+@property (nonatomic,strong) NSString *_Nullable sex;
 
-- (void)setValue:(id)value forUndefinedKey:(NSString *)key;
+- (void)setValue:(_Nullable id)value forUndefinedKey:( NSString * _Nullable )key;
 
-- (nullable id)valueForUndefinedKey:(NSString *)key;
+- (nullable id)valueForUndefinedKey:(NSString * _Nullable)key;
 
 - (void)getIvarList;
 
@@ -38,6 +38,5 @@
 
 - (void)getProtoclList;
 
-//- (void)showDesciption:(_Nullable id)obj;
-
+- (void)showDesciption:(_Nullable id)obj;
 @end
