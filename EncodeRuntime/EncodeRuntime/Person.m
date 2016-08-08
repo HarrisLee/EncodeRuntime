@@ -161,7 +161,6 @@
         NSString *methodName = [[NSString alloc] initWithUTF8String:name];
         
         int args = method_getNumberOfArguments(method);
-        
         NSLog(@"%@, args count:%d\n",methodName,args);
     }
 }

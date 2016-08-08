@@ -46,6 +46,11 @@
                                           userInfo:@"info"
                                            repeats:YES];
     
+    UITableView *table = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
+    table.backgroundColor = [UIColor redColor];
+    [self.view addSubview:table];
+    
+    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
