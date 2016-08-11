@@ -39,7 +39,7 @@
     self.person = person;
     
     
-//    //2.此time在Dealloc里面释放的话会无法实现。因为Timer添加到Runloop的时候，会被Runloop强引用，
+    //2.此time在Dealloc里面释放的话会无法实现。因为Timer添加到Runloop的时候，会被Runloop强引用，
     //timer对target又做了强引用，导致 target 一直不能被释放掉，所以也就走不到target的dealloc里
     //当Person 没有showDesciption:方法时，会奔溃（只要有这个方法，而不管有没有在头文件。h中定义）
 //    time = [NSTimer scheduledTimerWithTimeInterval:10.0
