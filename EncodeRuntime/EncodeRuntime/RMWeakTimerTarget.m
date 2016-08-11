@@ -114,6 +114,20 @@
     ms_release_gcd_object(_privateSerialQueue);
 }
 
+//在断点调试的情况下回输出这个。 否则在下面的方法输出
+- (NSString *)debugDescription
+{
+    return [NSString stringWithFormat:@"DEBUG <%@ %p> time_interval=%f target=%@ selector=%@ userInfo=%@ repeats=%d timer=%@",
+            NSStringFromClass([self class]),
+            self,
+            self.timeInterval,
+            self.target,
+            NSStringFromSelector(self.selector),
+            self.userInfo,
+            self.repeats,
+            self.timer];
+}
+
 /**
  *  重写此方法，可以使输出该对象时，按照你的格式来使用。而不是单单的一个类名+地址
  *

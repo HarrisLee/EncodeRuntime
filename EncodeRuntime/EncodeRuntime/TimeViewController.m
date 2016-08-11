@@ -15,8 +15,8 @@
 
 @interface TimeViewController ()
 {
-//    RMWeakTimerTarget *time;
-    NSTimer *time;
+    RMWeakTimerTarget *time;
+//    NSTimer *time;
     
 }
 @property (nonatomic,weak) Person *person;
@@ -29,11 +29,11 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     //1.此方法可以实现Timer在ViewController被Pop的时候 执行dealloc方法。
-//    time = [RMWeakTimerTarget
-//            scheduledTimerWithTimeInterval:1.0
-//            target:self selector:@selector(showName:)
-//            userInfo:@"infos Object"
-//            repeats:YES dispatchQueue:dispatch_get_main_queue()];
+    time = [RMWeakTimerTarget
+            scheduledTimerWithTimeInterval:1.0
+            target:self selector:@selector(showName:)
+            userInfo:@"infos Object"
+            repeats:YES dispatchQueue:dispatch_get_main_queue()];
     
     Person *person = [Person new];
     self.person = person;
@@ -54,9 +54,7 @@
     
     
     //3.第二种可以使time与self循环引用打破的方法   VC持有Time   Time持有Model   Model不持有VC   这样循环打破
-    time = [RMWeakerTime scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(showName:) userInfo:nil repeats:YES];
-    
-    
+//    time = [RMWeakerTime scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(showName:) userInfo:nil repeats:YES];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
