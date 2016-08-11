@@ -90,8 +90,8 @@
     table.dataSource = self;
     table.showsVerticalScrollIndicator = NO;
     [self.view addSubview:table];
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
+//    self.automaticallyAdjustsScrollViewInsets = NO;
+//    [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
 - (void)startActivity

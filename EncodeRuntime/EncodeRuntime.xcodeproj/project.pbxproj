@@ -35,6 +35,7 @@
 		4470713F1CBB33D60017F665 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 4470713E1CBB33D60017F665 /* Person.m */; };
 		447071421CBB3C970017F665 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 447071411CBB3C970017F665 /* Student.m */; };
 		447071451CBB3D5F0017F665 /* StudentSubClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 447071441CBB3D5F0017F665 /* StudentSubClass.m */; };
+		44E8F78A1D5C10D100E48EB0 /* RMWeakerTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E8F7891D5C10D100E48EB0 /* RMWeakerTime.m */; };
 		44EB92F81D4C86DB001A0CCF /* TimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EB92F71D4C86DB001A0CCF /* TimeViewController.m */; };
 		44EB92FB1D4CA638001A0CCF /* RMWeakTimerTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EB92FA1D4CA638001A0CCF /* RMWeakTimerTarget.m */; };
 /* End PBXBuildFile section */
@@ -91,6 +92,8 @@
 		447071411CBB3C970017F665 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		447071431CBB3D5F0017F665 /* StudentSubClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentSubClass.h; sourceTree = "<group>"; };
 		447071441CBB3D5F0017F665 /* StudentSubClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentSubClass.m; sourceTree = "<group>"; };
+		44E8F7881D5C10D100E48EB0 /* RMWeakerTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMWeakerTime.h; sourceTree = "<group>"; };
+		44E8F7891D5C10D100E48EB0 /* RMWeakerTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMWeakerTime.m; sourceTree = "<group>"; };
 		44EB92F61D4C86DB001A0CCF /* TimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeViewController.h; sourceTree = "<group>"; };
 		44EB92F71D4C86DB001A0CCF /* TimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeViewController.m; sourceTree = "<group>"; };
 		44EB92F91D4CA638001A0CCF /* RMWeakTimerTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMWeakTimerTarget.h; sourceTree = "<group>"; };
@@ -189,6 +192,8 @@
 				44EB92F71D4C86DB001A0CCF /* TimeViewController.m */,
 				44EB92F91D4CA638001A0CCF /* RMWeakTimerTarget.h */,
 				44EB92FA1D4CA638001A0CCF /* RMWeakTimerTarget.m */,
+				44E8F7881D5C10D100E48EB0 /* RMWeakerTime.h */,
+				44E8F7891D5C10D100E48EB0 /* RMWeakerTime.m */,
 			);
 			path = EncodeRuntime;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 				447071281CBB33B90017F665 /* main.m in Sources */,
 				44EB92F81D4C86DB001A0CCF /* TimeViewController.m in Sources */,
 				440B850F1D47157200CCCE19 /* UIImage+MultiFormat.m in Sources */,
+				44E8F78A1D5C10D100E48EB0 /* RMWeakerTime.m in Sources */,
 				440B850E1D47157200CCCE19 /* UIImage+GIF.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
